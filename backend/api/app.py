@@ -2,15 +2,9 @@ from flask import Flask, jsonify, request
 from userdata import *
 app = Flask(__name__)
 
-username = "Samikmalhotra"
 
-@app.route("/", methods=['POST','GET'])
-def index():
-
-    content_type = request.headers.get('Content-Type')
-    if (content_type == 'application/json'):
-        json = request.json
-        username = json.username
+@app.route("/", methods=['POST', 'GET'])
+def index(username):
 
         # return json with details
     try:
